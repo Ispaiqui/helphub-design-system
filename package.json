@@ -25,16 +25,15 @@
     "**/*.css"
   ],
   "files": [
-    "dist",
-    "src/styles"
+    "src"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "types": "./src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
     },
     "./styles.css": "./src/styles/index.css",
     "./tokens.css": "./src/styles/tokens.css",
@@ -43,7 +42,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:lib": "node scripts/check-tokens.mjs && vite build --config vite.lib.config.ts && tsc -p tsconfig.lib.json && cp src/styles/*.css dist/",
+    "build:lib": "node scripts/check-tokens.mjs && vite build --config vite.lib.config.ts && tsc -p tsconfig.lib.json && node scripts/copy-styles.mjs",
     "typecheck": "tsc --noEmit",
     "check:tokens": "node scripts/check-tokens.mjs",
     "preview": "vite preview"
