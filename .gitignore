@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-playground
+.vite
+*.local
+*.log
+.DS_Store
+.idea
+.vscode/*
+!.vscode/extensions.json
+coverage
+*.tsbuildinfo
