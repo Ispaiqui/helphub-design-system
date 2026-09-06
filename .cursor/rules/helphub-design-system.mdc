@@ -1,0 +1,38 @@
+---
+description: HelpHub design system — tokens, themes, and components
+alwaysApply: true
+---
+
+# HelpHub design system
+
+Use `@helphub/design-system` as the only visual source of truth.
+
+## Tokens
+
+- CSS variables in `src/styles/tokens.css` own every brand hex.
+- Components and new UI must use semantic utilities: `bg-background`, `text-foreground`, `bg-card`, `bg-primary`, `text-primary-foreground`, `bg-muted`, `text-muted-foreground`, `border-border`, `ring-ring`, `bg-sidebar`, `bg-destructive`.
+- Never hardcode hex (`#2563eb`, `#0f172a`, …) in React/TSX/CSS outside `tokens.css`.
+- Never invent alternate brand blues, slates, or reds.
+
+## Locked hex roles
+
+- Neutrals: `#ffffff` white; `#f8fafc` slate-50; `#f1f5f9` slate-100; `#e2e8f0` slate-200; `#94a3b8` slate-400; `#64748b` slate-500; `#1e293b` slate-800; `#0f172a` slate-900; `#020617` slate-950
+- Blues: `#bfdbfe` `#93c5fd` `#60a5fa` `#3b82f6` `#2563eb` `#1d4ed8` `#1e40af` `#1e3a8a`
+- Destructive: `#ef4444` (light), `#7f1d1d` (dark)
+
+## Components
+
+Prefer exported primitives (`Button`, `Input`, `Card`, `Badge`, `Text`, `Heading`, `ThemeProvider`) before creating new ones. New components must stay token-only and follow `cn` + CVA.
+
+## Theme
+
+Wrap apps in `ThemeProvider`. Dark mode is the `.dark` class on `html`. Persist with `helphub-theme`.
+
+## Import path
+
+```ts
+import { Button, ThemeProvider } from "@helphub/design-system";
+import "@helphub/design-system/styles.css";
+```
+
+Typography default is Inter via `--font-sans` (swappable).

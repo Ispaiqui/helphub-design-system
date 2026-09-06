@@ -1,0 +1,159 @@
+/**
+ * HelpHub design tokens
+ * ----------------------
+ * CSS custom properties are the source of truth.
+ * Primitive hex values appear only in this file. Semantic roles and
+ * components must reference these variables — never raw hex.
+ *
+ * Swap the default typeface by overriding `--font-sans` in the host app.
+ */
+
+:root {
+  /* ── Primitive palette ── */
+  --hh-white: #ffffff;
+  --hh-slate-50: #f8fafc;
+  --hh-slate-100: #f1f5f9;
+  --hh-slate-200: #e2e8f0;
+  --hh-slate-400: #94a3b8;
+  --hh-slate-500: #64748b;
+  --hh-slate-800: #1e293b;
+  --hh-slate-900: #0f172a;
+  --hh-slate-950: #020617;
+
+  --hh-blue-200: #bfdbfe;
+  --hh-blue-300: #93c5fd;
+  --hh-blue-400: #60a5fa;
+  --hh-blue-500: #3b82f6;
+  --hh-blue-600: #2563eb;
+  --hh-blue-700: #1d4ed8;
+  --hh-blue-800: #1e40af;
+  --hh-blue-900: #1e3a8a;
+
+  --hh-red-500: #ef4444;
+  --hh-red-900: #7f1d1d;
+
+  /* ── Typography (Inter by default, swappable) ── */
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+
+  /* ── Radius (base 0.75rem, SaaS-friendly) ── */
+  --radius: 0.75rem;
+
+  /* ── Spacing extras on top of the 4px Tailwind scale ── */
+  --space-page: 1.5rem;
+  --space-section: 4rem;
+  --space-card: 1.5rem;
+
+  /* ── Motion ── */
+  --hh-duration-fast: 150ms;
+  --hh-duration-normal: 200ms;
+  --hh-duration-slow: 350ms;
+  --hh-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --hh-ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ── Z-index ── */
+  --hh-z-base: 0;
+  --hh-z-raised: 10;
+  --hh-z-dropdown: 20;
+  --hh-z-sticky: 30;
+  --hh-z-overlay: 40;
+  --hh-z-modal: 50;
+  --hh-z-popover: 60;
+  --hh-z-toast: 70;
+  --hh-z-max: 9999;
+
+  /* ── Light semantic theme ── */
+  --background: var(--hh-white);
+  --foreground: var(--hh-slate-900);
+  --card: var(--hh-white);
+  --card-foreground: var(--hh-slate-900);
+  --popover: var(--hh-white);
+  --popover-foreground: var(--hh-slate-900);
+  --primary: var(--hh-blue-600);
+  --primary-foreground: var(--hh-white);
+  --primary-hover: var(--hh-blue-500);
+  --secondary: var(--hh-slate-100);
+  --secondary-foreground: var(--hh-slate-900);
+  --muted: var(--hh-slate-100);
+  --muted-foreground: var(--hh-slate-500);
+  --accent: var(--hh-slate-100);
+  --accent-foreground: var(--hh-slate-900);
+  --destructive: var(--hh-red-500);
+  --destructive-foreground: var(--hh-white);
+  --border: var(--hh-slate-200);
+  --input: var(--hh-slate-200);
+  --ring: var(--hh-blue-500);
+  --chart-1: var(--hh-blue-600);
+  --chart-2: var(--hh-blue-500);
+  --chart-3: var(--hh-blue-400);
+  --chart-4: var(--hh-blue-300);
+  --chart-5: var(--hh-blue-200);
+  --sidebar: var(--hh-slate-50);
+  --sidebar-foreground: var(--hh-slate-900);
+  --sidebar-primary: var(--hh-blue-600);
+  --sidebar-primary-foreground: var(--hh-white);
+  --sidebar-accent: var(--hh-slate-100);
+  --sidebar-accent-foreground: var(--hh-slate-900);
+  --sidebar-border: var(--hh-slate-200);
+  --sidebar-ring: var(--hh-blue-500);
+
+  /* Brand extras used by logo / loading treatments */
+  --logo-from: var(--hh-blue-800);
+  --logo-via: var(--hh-blue-600);
+  --logo-to: var(--hh-blue-500);
+  --loading-particle: var(--hh-blue-400);
+
+  /* Shadows derived from semantic colors (no extra hex) */
+  --hh-shadow-xs: 0 1px 2px 0 color-mix(in srgb, var(--foreground) 5%, transparent);
+  --hh-shadow-sm:
+    0 1px 3px 0 color-mix(in srgb, var(--foreground) 8%, transparent),
+    0 1px 2px -1px color-mix(in srgb, var(--foreground) 8%, transparent);
+  --hh-shadow-md:
+    0 4px 6px -1px color-mix(in srgb, var(--foreground) 8%, transparent),
+    0 2px 4px -2px color-mix(in srgb, var(--foreground) 6%, transparent);
+  --hh-shadow-lg:
+    0 10px 15px -3px color-mix(in srgb, var(--foreground) 10%, transparent),
+    0 4px 6px -4px color-mix(in srgb, var(--foreground) 6%, transparent);
+  --hh-shadow-xl:
+    0 20px 25px -5px color-mix(in srgb, var(--foreground) 12%, transparent),
+    0 8px 10px -6px color-mix(in srgb, var(--foreground) 8%, transparent);
+  --hh-shadow-primary: 0 10px 20px -4px color-mix(in srgb, var(--primary) 25%, transparent);
+}
+
+.dark {
+  --background: var(--hh-slate-950);
+  --foreground: var(--hh-slate-50);
+  --card: var(--hh-slate-900);
+  --card-foreground: var(--hh-slate-50);
+  --popover: var(--hh-slate-900);
+  --popover-foreground: var(--hh-slate-50);
+  --primary: var(--hh-blue-500);
+  --primary-foreground: var(--hh-white);
+  --primary-hover: var(--hh-blue-400);
+  --secondary: var(--hh-slate-800);
+  --secondary-foreground: var(--hh-slate-50);
+  --muted: var(--hh-slate-800);
+  --muted-foreground: var(--hh-slate-400);
+  --accent: var(--hh-slate-800);
+  --accent-foreground: var(--hh-slate-50);
+  --destructive: var(--hh-red-900);
+  --destructive-foreground: var(--hh-slate-50);
+  --border: var(--hh-slate-800);
+  --input: var(--hh-slate-800);
+  --ring: var(--hh-blue-600);
+  --chart-1: var(--hh-blue-500);
+  --chart-2: var(--hh-blue-600);
+  --chart-3: var(--hh-blue-700);
+  --chart-4: var(--hh-blue-800);
+  --chart-5: var(--hh-blue-900);
+  --sidebar: var(--hh-slate-900);
+  --sidebar-foreground: var(--hh-slate-50);
+  --sidebar-primary: var(--hh-blue-500);
+  --sidebar-primary-foreground: var(--hh-white);
+  --sidebar-accent: var(--hh-slate-800);
+  --sidebar-accent-foreground: var(--hh-slate-50);
+  --sidebar-border: var(--hh-slate-800);
+  --sidebar-ring: var(--hh-blue-600);
+}

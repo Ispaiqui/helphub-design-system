@@ -1,0 +1,74 @@
+{
+  "name": "@helphub/design-system",
+  "version": "0.1.0",
+  "description": "Sistema de design da HelpHub — tokens CSS, tema Tailwind v4 e componentes React.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.12.1",
+  "author": "HelpHub",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ispaiqui/helphub-design-system.git"
+  },
+  "homepage": "https://github.com/Ispaiqui/helphub-design-system",
+  "bugs": {
+    "url": "https://github.com/Ispaiqui/helphub-design-system/issues"
+  },
+  "keywords": [
+    "helphub",
+    "design-system",
+    "design-tokens",
+    "tailwindcss",
+    "react"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "src/styles"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./src/styles/index.css",
+    "./tokens.css": "./src/styles/tokens.css",
+    "./theme.css": "./src/styles/theme.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:lib": "node scripts/check-tokens.mjs && vite build --config vite.lib.config.ts && tsc -p tsconfig.lib.json && cp src/styles/*.css dist/",
+    "typecheck": "tsc --noEmit",
+    "check:tokens": "node scripts/check-tokens.mjs",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  }
+}
